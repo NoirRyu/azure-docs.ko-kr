@@ -130,7 +130,7 @@ Azure Portal을 통해 약간의 사용자 입력과 한 번의 클릭으로 배
 ## <a name="how-to-guides"></a>방법 가이드
 ### <a name="governance-dapp"></a>거버넌스 DApp
 
-인증 증명의 중심에는 분산 거버넌스가 있습니다. 거버넌스 DApp는 네트워크에서 기관을 관리하는 데 사용되는 미리 배포된 [스마트 계약](https://github.com/Azure-Samples/blockchain/tree/master/ethereum-on-azure/) 집합 및 웹 응용 프로그램입니다.
+인증 증명의 중심에는 분산 거버넌스가 있습니다. 거버넌스 DApp는 네트워크에서 기관을 관리하는 데 사용되는 미리 배포된 [스마트 컨트랙트](https://github.com/Azure-Samples/blockchain/tree/master/ethereum-on-azure/) 집합 및 웹 응용 프로그램입니다.
 기관은 관리자 ID 및 유효성 검사기 노드로 분할됩니다.
 관리자는 일단의 검사기 노드에 합의 참여를 위임할 수 있습니다. 관리자는 네트워크 내부 또는 외부에서 다른 관리자에게 투표할 수도 있습니다.
 
@@ -143,7 +143,7 @@ Azure Portal을 통해 약간의 사용자 입력과 한 번의 클릭으로 배
 -   **감사 가능한 변경 기록 -**  각 변경은 투명성과 감사 가능성을 제공하는 블록체인에 기록됩니다.
 
 #### <a name="getting-started-with-governance"></a>거버넌스 시작
-거버넌스 DApp을 통해 원하는 트랜잭션을 수행하려면 Ethereum 전자지갑을 활용해야 합니다.  가장 간단한 방법은 [MetaMask](https://metamask.io) 등의 브라우저 내 전자지갑을 사용하는 것입니다. 하지만 거버넌스 DApp는 네트워크에서 배포되는 스마트 계약이므로 거버넌스 계약에 대한 상호 작용을 자동화할 수도 있습니다.
+거버넌스 DApp을 통해 원하는 트랜잭션을 수행하려면 Ethereum 전자지갑을 활용해야 합니다.  가장 간단한 방법은 [MetaMask](https://metamask.io) 등의 브라우저 내 전자지갑을 사용하는 것입니다. 하지만 거버넌스 DApp는 네트워크에서 배포되는 스마트 컨트랙트이므로 거버넌스 계약에 대한 상호 작용을 자동화할 수도 있습니다.
 
 MetaMask를 설치한 후 브라우저에서 거버넌스 DApp로 이동합니다.  URL은 배포 확인 이메일에 나와 있으며 Azure Portal을 통해 배포 출력에서도 확인할 수 있습니다.  브라우저 내 전자지갑이 설치되어 있지 않으면 작업을 수행할 수는 없지만 관리자 상태를 읽을 수는 있습니다.  
 
@@ -279,7 +279,7 @@ SSH 키(인증 유형 = 공개 키)|원격 로그인에 사용하는 보안 셸 
 공용 IP(고급 옵션 = 사용)|VNet 게이트웨이 뒤에 네트워크를 배포하고 피어링 액세스를 제거합니다. 이 옵션을 선택하면 모든 멤버가 VNet 게이트웨이를 사용해야 연결이 호환됩니다.|공용 IP 사설 VNet|공용 IP
 블록 가스 제한(고급 옵션 = 사용)|네트워크의 시작 블록 가스 제한입니다.|임의의 숫자|50,000,00
 블록 다시 봉인 기간(초)|네트워크에 트랜잭션이 없을 때 빈 블록이 작성되는 빈도입니다. 빈도가 높으면 블록이 더 빨리 작성되지만 저장소 비용이 증가합니다.|임의의 숫자|15
-트랜잭션 권한 계약(고급 옵션 = 사용)|트랜잭션 권한 지정 계약에 대한 바이트 코드입니다. 스마트 계약 배포 및 실행을 권한이 부여된 Ethereum 계정 목록으로 제한합니다.|계약 바이트 코드|해당 없음
+트랜잭션 권한 계약(고급 옵션 = 사용)|트랜잭션 권한 지정 계약에 대한 바이트 코드입니다. 스마트 컨트랙트 배포 및 실행을 권한이 부여된 Ethereum 계정 목록으로 제한합니다.|계약 바이트 코드|해당 없음
 
 샘플 배포는 다음과 같습니다: ![Ethereum 설정](./media/ethereum-poa-deployment/ethereum-settings.png)
 
@@ -625,14 +625,14 @@ Azure Portal에서 \"리소스 만들기\" 단추를 클릭한 후 \"Traffic Man
 ```
 ## <a name="tutorials"></a>자습서
 
-### <a name="programmatically-interacting-with-a-smart-contract"></a>프로그래밍 방식으로 스마트 계약과 상호 작용
+### <a name="programmatically-interacting-with-a-smart-contract"></a>프로그래밍 방식으로 스마트 컨트랙트과 상호 작용
 
 > [!WARNING]
 > Ethereum 개인 키는 네트워크를 통해 보내지 마세요! 각 트랜잭션을 로컬에서 먼저 서명한 다음, 네트워크를 통해 서명된 트랜잭션을 보내도록 합니다.
 
 다음 예제에서는 *ethereumjs-wallet*을 사용하여 Ethereum 주소를 생성하고, *ethereumjs-tx*를 사용하여 로컬에서 서명하고, *web3*을 사용하여 원시 트랜잭션을 Ethereum RPC 엔드포인트로 보냅니다.
 
-다음 예제에서는 간단한 Hello-World 스마트 계약이 사용됩니다.
+다음 예제에서는 간단한 Hello-World 스마트 컨트랙트가 사용됩니다.
 
 ```javascript
 pragma solidity ^0.4.11;
@@ -702,7 +702,7 @@ web3.eth.getTransactionCount(accountAddress, function (err, nonce) {
  });
 ```
 
-### <a name="deploy-smart-contract-with-truffle"></a>Truffle을 사용하여 스마트 계약 배포
+### <a name="deploy-smart-contract-with-truffle"></a>Truffle을 사용하여 스마트 컨트랙트 배포
 
 -   필요한 라이브러리 설치
 
@@ -742,13 +742,13 @@ module.exports = {
 $ truffle migrate --network poa
 ```
 
-### <a name="debug-smart-contract-with-truffle"></a>Truffle을 사용하여 스마트 계약 디버그
+### <a name="debug-smart-contract-with-truffle"></a>Truffle을 사용하여 스마트 컨트랙트 디버그
 
-Truffle은 스마트 계약을 디버그하는 데 사용할 수 있는 로컬 개발 네트워크를 보유하고 있습니다. 전체 자습서는 [여기서](http://truffleframework.com/tutorials/debugging-a-smart-contract) 찾을 수 있습니다.
+Truffle은 스마트 컨트랙트을 디버그하는 데 사용할 수 있는 로컬 개발 네트워크를 보유하고 있습니다. 전체 자습서는 [여기서](http://truffleframework.com/tutorials/debugging-a-smart-contract) 찾을 수 있습니다.
 
 ### <a name="webassembly-wasm-support"></a>WebAssembly(WASM) 지원
 
-WebAssembly 지원은 새로 배포된 PoA 네트워크에서 이미 사용하도록 설정되어 있습니다. 이를 통해 스마트 계약을 웹 어셈블리로 변환 컴파일되는 모든 언어(Rust, C, C++)로 개발할 수 있습니다. 자세한 내용은 아래 링크를 참조하세요.
+WebAssembly 지원은 새로 배포된 PoA 네트워크에서 이미 사용하도록 설정되어 있습니다. 이를 통해 스마트 컨트랙트을 웹 어셈블리로 변환 컴파일되는 모든 언어(Rust, C, C++)로 개발할 수 있습니다. 자세한 내용은 아래 링크를 참조하세요.
 
 -   WebAssembly에 대한 Parity 개요 - <https://wiki.parity.io/WebAssembly-Home>
 
@@ -760,7 +760,7 @@ WebAssembly 지원은 새로 배포된 PoA 네트워크에서 이미 사용하�
 
 #### <a name="i-notice-there-are-many-transactions-on-the-network-that-i-didnt-send-where-are-these-coming-from"></a>전송하지 않은 트랜잭션이 네트워크에\' 다수 표시됩니다. 이러한 트랜잭션은 어디서 오는 것인가요?
 
-[개인 API](https://web3js.readthedocs.io/en/1.0/web3-eth-personal.html)를 잠금 해제하는 것은 안전하지 않습니다. 봇은 잠금 해제된 Ethereum 계정을 수신 대기하고 자금을 고갈시키려고 시도합니다. 봇은 이러한 계정에 실제 Ether가 있다고 가정하고 잔액을 가장 먼저 빼돌리려고 시도합니다. 개인 API는 네트워크에서 사용하도록 설정하지 않습니다. 대신 [프로그래밍 방식으로 스마트 계약과 상호 작용](#programmatically-interacting-with-a-smart-contract) 섹션에서 설명한 대로 MetaMask와 같은 전자지갑을 수동으로 사용하거나 프로그래밍 방식으로 트랜잭션을 미리 서명합니다.
+[개인 API](https://web3js.readthedocs.io/en/1.0/web3-eth-personal.html)를 잠금 해제하는 것은 안전하지 않습니다. 봇은 잠금 해제된 Ethereum 계정을 수신 대기하고 자금을 고갈시키려고 시도합니다. 봇은 이러한 계정에 실제 Ether가 있다고 가정하고 잔액을 가장 먼저 빼돌리려고 시도합니다. 개인 API는 네트워크에서 사용하도록 설정하지 않습니다. 대신 [프로그래밍 방식으로 스마트 컨트랙트과 상호 작용](#programmatically-interacting-with-a-smart-contract) 섹션에서 설명한 대로 MetaMask와 같은 전자지갑을 수동으로 사용하거나 프로그래밍 방식으로 트랜잭션을 미리 서명합니다.
 
 #### <a name="how-to-ssh-onto-a-vm"></a>VM에 SSH를 연결하려면 어떻게 할까요?
 
@@ -768,7 +768,7 @@ SSH 포트는 보안상의 이유로 표시되지 않습니다. [이 가이드](
 
 #### <a name="how-do-i-set-up-an-audit-member-or-transaction-nodes"></a>멤버 또는 트랜잭션 노드를 설정하고 감사하려면 어떻게 할까요?
 
-트랜잭션 노드는 네트워크와 피어링되지만 합의에는 참여하지 않는 일단의 패리티 클라이언트입니다. 이러한 노드는 여전히 Ethereum 트랜잭션을 제출하고 스마트 계약 상태를 읽는 데 사용할 수 있습니다.
+트랜잭션 노드는 네트워크와 피어링되지만 합의에는 참여하지 않는 일단의 패리티 클라이언트입니다. 이러한 노드는 여전히 Ethereum 트랜잭션을 제출하고 스마트 컨트랙트 상태를 읽는 데 사용할 수 있습니다.
 이러한 방식은 네트워크에서 권한이 없는 컨소시엄 멤버에게 감사 기능을 제공하는 메커니즘으로 활용하기에 적합합니다. 이렇게 하려면 '컨소시엄 확장 2단계'를 수행하기만 하면 됩니다.
 
 #### <a name="why-are-metamask-transactions-taking-a-long-time"></a>MetaMask 트랜잭션이 오래 걸리는 이유는 무엇인가요?
@@ -791,7 +791,7 @@ SSH 포트는 보안상의 이유로 표시되지 않습니다. [이 가이드](
 
 트랜잭션 처리량은 네트워크 토폴로지 및 트랜잭션 유형에 따라 크게 달라집니다.  단순 트랜잭션을 사용한 벤치마크 테스트 결과 여러 지역에 걸쳐 배포된 네트워크에서 초당 평균 트랜잭션 수는 400개였습니다.
 
-#### <a name="how-do-i-subscribe-to-smart-contract-events"></a>스마트 계약 이벤트를 구독하려면 어떻게 해야 하나요?
+#### <a name="how-do-i-subscribe-to-smart-contract-events"></a>스마트 컨트랙트 이벤트를 구독하려면 어떻게 해야 하나요?
 
 Ethereum 인증 증명에서는 이제 웹 소켓을 지원합니다.  배포 전자 메일 또는 배포 출력을 확인하면 웹 소켓 URL 및 포트를 찾을 수 있습니다.
 
