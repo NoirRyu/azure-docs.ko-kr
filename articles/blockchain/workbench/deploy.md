@@ -19,7 +19,7 @@ ms.locfileid: "51616387"
 ---
 # <a name="deploy-azure-blockchain-workbench"></a>Azure Blockchain Workbench 배포
 
-Azure Blockchain Workbench는 Azure Marketplace에서 솔루션 템플릿을 사용하여 배포됩니다. 템플릿은 블록체인 응용 프로그램을 만드는 데 필요한 구성 요소의 배포를 간소화합니다. 배포되면 Blockchain Workbench는 사용자와 블록체인 응용 프로그램을 만들고 관리할 수 있는 클라이언트 앱에 대한 액세스를 제공합니다.
+Azure Blockchain Workbench는 Azure Marketplace에서 솔루션 템플릿을 사용하여 배포됩니다. 템플릿은 블록체인 응용 프로그램을 만드는 데 필요한 구성 요소의 배포를 간소화합니다. 배포되면 Blockchain Workbench는 사용자와 블록체인 응용 프로그램을 만들고 관리할 수 있는 클라이언트 앱에 대한 접근을 제공합니다.
 
 Blockchain Workbench의 구성 요소에 대한 자세한 내용은 [Azure Blockchain Workbench 아키텍처](architecture.md)를 참조하세요.
 
@@ -187,7 +187,7 @@ Azure AD는 Blockchain Workbench 배포를 완료하도록 구성되어야 합�
 
 ### <a name="blockchain-workbench-api-app-registration"></a>Blockchain Workbench API 앱 등록
 
-Blockchain Workbench 배포에는 Azure AD 응용 프로그램의 등록이 필요합니다. Azure AD(Azure Active Directory) 테넌트에서 앱을 등록해야 합니다. 기존 테넌트를 사용하거나 새 테넌트를 만들 수 있습니다. 기존 Azure AD 테넌트를 사용하는 경우 Azure AD 테넌트 내에서 애플리케이션을 등록하고, Graph API 권한을 부여하고, 게스트 액세스를 허용할 수 있는 충분한 권한이 필요합니다. 기존 Azure AD 테넌트에 충분한 권한이 없는 경우 새 테넌트를 만듭니다.
+Blockchain Workbench 배포에는 Azure AD 응용 프로그램의 등록이 필요합니다. Azure AD(Azure Active Directory) 테넌트에서 앱을 등록해야 합니다. 기존 테넌트를 사용하거나 새 테넌트를 만들 수 있습니다. 기존 Azure AD 테넌트를 사용하는 경우 Azure AD 테넌트 내에서 애플리케이션을 등록하고, Graph API 권한을 부여하고, 게스트 접근을 허용할 수 있는 충분한 권한이 필요합니다. 기존 Azure AD 테넌트에 충분한 권한이 없는 경우 새 테넌트를 만듭니다.
 
 
 1. [Azure Portal](https://portal.azure.com)에 로그인합니다.
@@ -265,7 +265,7 @@ API 응용 프로그램은 디렉터리에 액세스하는 사용자로부터 �
 
    ![권한 부여](media/deploy/client-app-grant-permissions.png)
 
-   권한을 부여하면 Blockchain Workbench는 디렉터리의 사용자에 액세스할 수 있습니다. 읽기 권한은 Blockchain Workbench에서 구성원을 검색 및 추가하는 데 필요합니다.
+   권한을 부여하면 Blockchain Workbench는 디렉터리의 사용자에 접근할 수 있습니다. 읽기 권한은 Blockchain Workbench에서 구성원을 검색 및 추가하는 데 필요합니다.
 
 ### <a name="get-application-id"></a>응용 프로그램 ID 가져오기
 
